@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="horses-1" class="domain.Horse">
+    <property name="name" value="Danya"/>
+    <property name="breed" value="fullstack"/>
+  </bean>
+
+  <bean id="horses-2" class="domain.Horse">
+    <property name="name" value="Matvey-1"/>
+    <property name="breed" value="superspecial"/>
+  </bean>
+
+  <bean id="horses-3" class="domain.Horse">
+    <property name="name" value="Matvey-2"/>
+    <property name="breed" value="so-so"/>
+  </bean>
+
+  <bean id="horses-4" class="domain.Horse">
+    <property name="name" value="Vera"/>
+    <property name="breed" value="fullstack"/>
+  </bean>
+
+</beans>
