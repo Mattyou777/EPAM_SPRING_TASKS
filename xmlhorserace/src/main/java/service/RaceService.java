@@ -1,11 +1,12 @@
 package service;
 
-import domain.Riders;
+import domain.Horse;
+import domain.Race;
+import domain.Rider;
+import java.util.List;
 
 public interface RaceService {
 
-  void addParticipant(Riders rider);
-
-  void printInfo();
+  Race getRace(List<Rider> riders, List<Horse> horses);
 
 }

@@ -3,7 +3,7 @@ package domain;
 import lombok.Data;
 
 @Data
-public class Riders {
+public class Rider {
   private String name;
   private Horse horse;
 }
