@@ -1,8 +1,9 @@
 package service;
 
-import domain.Riders;
+import domain.Horse;
+import domain.Rider;
 
 public interface HorseService {
 
-  void buyHorse(Riders rider);
+  void buyHorse(Rider rider, Horse horse);
 }
