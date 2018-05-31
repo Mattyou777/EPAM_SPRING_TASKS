@@ -3,6 +3,7 @@ package service.impl;
 import domain.Horse;
 import domain.Race;
 import domain.Rider;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import lombok.Data;
@@ -17,20 +18,19 @@ public class RaceServiceImpl implements RaceService {
 
   @Override
   public Race getRace(List<Rider> riders, List<Horse> horses) {
-    List<Rider> randomRiders = null;
-    Collections.copy(riders,randomRiders);
-    Collections.shuffle(randomRiders);
+    Collections.shuffle(riders);
 
-    List<Horse> randomHorses = null;
-    Collections.copy(horses,randomHorses);
-    Collections.shuffle(randomHorses);
+    Collections.shuffle(horses);
 
-    for (int i = 0; i < 2; i++){
-      horseService.buyHorse(randomRiders.get(i), randomHorses.get(i));
-      System.out.println(i + randomRiders.get(i).toString());
+    List<Rider> participantsRiders = new ArrayList<>();
+
+    for (int i = 1; i < 3; i++){
+      participantsRiders.add(riders.get(i-1));
+      horseService.buyHorse(riders.get(i-1), horses.get(i-1));
+      System.out.println(i + " " + participantsRiders.get(i-1).toString());
     }
 
-    currentRace.setParticipants(randomRiders);
+    currentRace.setParticipants(participantsRiders);
     return currentRace;
   }
 }

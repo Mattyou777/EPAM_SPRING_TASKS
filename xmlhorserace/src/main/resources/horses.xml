@@ -3,24 +3,24 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="horses-1" class="domain.Horse">
+  <bean id="horse1" class="domain.Horse" depends-on="breed-1">
     <property name="name" value="Danya"/>
-    <property name="breed" value="fullstack"/>
+    <property name="breed" ref="breed-1"/>
   </bean>
 
-  <bean id="horses-2" class="domain.Horse">
+  <bean id="horse2" class="domain.Horse" depends-on="breed-2">
     <property name="name" value="Matvey-1"/>
-    <property name="breed" value="superspecial"/>
+    <property name="breed" ref="breed-2"/>
   </bean>
 
-  <bean id="horses-3" class="domain.Horse">
+  <bean id="horse3" class="domain.Horse" depends-on="breed-3">
     <property name="name" value="Matvey-2"/>
-    <property name="breed" value="so-so"/>
+    <property name="breed" ref="breed-3"/>
   </bean>
 
-  <bean id="horses-4" class="domain.Horse">
+  <bean id="horse4" class="domain.Horse" depends-on="breed-1">
     <property name="name" value="Vera"/>
-    <property name="breed" value="fullstack"/>
+    <property name="breed" ref="breed-1"/>
   </bean>
 
 </beans>

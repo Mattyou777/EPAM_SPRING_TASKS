@@ -15,4 +15,16 @@
   <import resource="breed.xml"/>
   <import resource="race.xml"/>
 
+
+  <bean name="raceService" class="service.impl.RaceServiceImpl">
+    <property name="currentRace" ref="race"/>
+    <property name="horseService" ref="horseService"/>
+  </bean>
+
+  <bean name="emulationService" class="service.impl.EmulationServiceImpl">
+    <constructor-arg ref="race"/>
+  </bean>
+
+  <bean name="horseService" class="service.impl.HorseServiceImpl"/>
+
 </beans>

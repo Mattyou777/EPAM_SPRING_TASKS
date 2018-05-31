@@ -3,19 +3,19 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="rider-1" class="domain.Riders">
+  <bean id="rider1" class="domain.Rider">
     <property name="name" value="Mikha"/>
   </bean>
 
-  <bean id="rider-2" class="domain.Riders">
+  <bean id="rider2" class="domain.Rider">
     <property name="name" value="Sergey l."/>
   </bean>
 
-  <bean id="rider-3" class="domain.Riders">
+  <bean id="rider3" class="domain.Rider">
     <property name="name" value="Sasha"/>
   </bean>
 
-  <bean id="rider-4" class="domain.Riders">
+  <bean id="rider4" class="domain.Rider">
     <property name="name" value="Andrey D."/>
   </bean>
 
