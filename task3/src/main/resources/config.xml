@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans" xmlns:context = "http://www.springframework.org/schema/context"
+  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+  <context:annotation-config/>
+
+  <bean id="beanA" class="domain.BeanA">
+    <property name="a" value="1"/>
+  </bean>
+
+  <bean id="beanB" class="domain.BeanB">
+    <constructor-arg ref="beanA"/>
+  </bean>
+
+  <bean id="beanC" class="domain.BeanC" scope="singleton">
+    <lookup-method name="getBeanD" bean="beanD"/>
+  </bean>
+
+  <bean id="beanD" class="domain.BeanD" scope="prototype">
+    <property name="d" value="#{ T(java.lang.Math).random()*10}"/>
+  </bean>
+
+  <bean id="replacer" class="domain.PrinterReplacer"/>
+
+  <bean id="beanE" class="domain.BeanE">
+    <property name="e" value="3"/>
+    <replaced-method name="printer" replacer="replacer"/>
+  </bean>
+
+  <bean id="beanF" class="domain.BeanF" init-method="init" destroy-method="destroy">
+    <property name="f" value="4"/>
+  </bean>
+
+  <bean id="BeanPostProcPrinter" class="domain.BeanPostProcessorPrinter"/>
+
+</beans>
